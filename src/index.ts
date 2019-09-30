@@ -56,6 +56,7 @@ function setup() {
  * and a random speed (that is, don't give it a starting speed).
  * As you type, VS Code should help you figure out what each argument means - very helpful!
  */
+  ball[3] = new Ball(200, 400, 45, color("blue"));
 }
 
 function draw() {
@@ -65,8 +66,9 @@ function draw() {
    * Temporarily comment out the line above by adding a // in front of the line (or using
    * the keyboard shortcut CMD-/. Save, then look back at the code (which should reload - if not, try
    * building again). Describe what changes! Then put the comment back in.
-   *
-   *
+   * There is no background color anymore, it's plain white.
+   *The objects leave a trace of their image everywhere they go, a line is created that shows where the
+   ball has traveled
    *
    *
    */
@@ -81,11 +83,13 @@ function draw() {
     ball[0].move(); // moves the ball, based on its speed.
     ball[1].move();
     ball[2].move();
+    ball[3].move();
   }
 
   ball[0].draw(); // draw ball1
   ball[1].draw(); // draw ball2
   ball[2].draw(); // draw ball3
+  ball[3].draw();
 }
 
 /* ===========  TASK 5 - Exploring Ball Objects =============
@@ -103,11 +107,11 @@ function draw() {
  * 5) You can now hover over the word `ball` and `ball3` and get information about the
  *    ACTUAL CURRENT STATE of the balls.
  * 6) Type `ball[0].x` in the debug console. What do you get?
- *
+ *30.504165652024824
  *
  * 7) Type `ball[3].col` in the debug console. What do you get?
  *
- *
+ *p5.Color {mode: "rgb", maxes: Object, _array: Array(4), levels: Array(4)}
  * 8) Go back to the line above and remove the break point, then continue the code with the blue play button.
  *
  * Now that you see how to create new Ball objects and make them move (add a fifth ball if you want!)
