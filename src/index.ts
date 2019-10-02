@@ -17,7 +17,7 @@
  * Typescript, like many languages, allows us to *import* code from other files.
  */
 import { Ball } from "./modules/ball.js";
-
+import { Flake } from "./modules/snowflake.js";
 /* ========== TASK 1 ==========
  * Hover over the word "Ball" above to learn about the Ball *class*. A class is a way to create
  * our own custom *data types*. We will explore the Ball class code in a while, but for now the hover
@@ -26,7 +26,7 @@ import { Ball } from "./modules/ball.js";
 
 /** Global array of Ball objects */
 const ball: Ball[] = [];
-
+const flake: Flake[] = [];
 function setup() {
   createCanvas(640, 480); // creates a drawing canvas 640 px wide and 480 tall.
   strokeWeight(2);
@@ -57,6 +57,7 @@ function setup() {
  * As you type, VS Code should help you figure out what each argument means - very helpful!
  */
   ball[3] = new Ball(200, 400, 45, color("blue"));
+  flake[0] = new Flake(150, 0, 50);
 }
 
 function draw() {
@@ -84,6 +85,9 @@ function draw() {
     for (let i = 0; i <= ball.length - 1; i++) {
       ball[i].move();
     }
+    for (let i = 0; i <= flake.length - 1; i++) {
+      flake[i].move();
+    }
   }
 
   // draw ball1
@@ -92,6 +96,9 @@ function draw() {
 
   for (let i = 0; i <= ball.length - 1; i++) {
     ball[i].draw();
+  }
+  for (let i = 0; i <= flake.length - 1; i++) {
+    flake[i].draw();
   }
 }
 
@@ -133,5 +140,6 @@ function draw() {
  *
  *
  */
+
 window.draw = draw;
 window.setup = setup;
