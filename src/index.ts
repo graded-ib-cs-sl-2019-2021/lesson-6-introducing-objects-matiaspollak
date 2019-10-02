@@ -49,7 +49,7 @@ function setup() {
 
   /* ball[2] starts centered at (500,300) and has a diameter of 10.
    * It is green, and starts out moving right with speed 1 and down with speed 3. */
-  ball[2] = new Ball(500, 300, 90, color("green"), 1, 3);
+  ball[2] = new Ball(500, 300, 90, color("green"), 1, 3, color("purple"));
 
   /* =========== TASK 2 =================
  * Create a fourth ball in the array that starts at position (200,400), has a diameter and color of your choice
@@ -80,16 +80,19 @@ function draw() {
 
   if (!mouseIsPressed) {
     // only move if the mouse is NOT pressed
-    ball[0].move(); // moves the ball, based on its speed.
-    ball[1].move();
-    ball[2].move();
-    ball[3].move();
+    // moves the ball, based on its speed.
+    for (let i = 0; i <= ball.length - 1; i++) {
+      ball[i].move();
+    }
   }
 
-  ball[0].draw(); // draw ball1
-  ball[1].draw(); // draw ball2
-  ball[2].draw(); // draw ball3
-  ball[3].draw();
+  // draw ball1
+  // draw ball2
+  // draw ball3
+
+  for (let i = 0; i <= ball.length - 1; i++) {
+    ball[i].draw();
+  }
 }
 
 /* ===========  TASK 5 - Exploring Ball Objects =============
